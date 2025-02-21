@@ -42,7 +42,7 @@ public class MovimentoBarra : MonoBehaviour
             {
         
                 Vector2 bounceDirection = new Vector2(hitFactor, 1).normalized; 
-                ballRb.velocity = bounceDirection * bounceForce; 
+                ballRb.linearVelocity = bounceDirection * bounceForce; 
             }
         }
     }
