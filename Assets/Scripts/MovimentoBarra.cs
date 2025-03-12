@@ -10,16 +10,16 @@ public class MovimentoBarra : MonoBehaviour
 
     void Start()
     {
-    rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         Move();
     }
-        void Move()
-        {
-            float moveX = Input.GetAxisRaw("Horizontal");
-            rb.linearVelocity = new Vector2(rb.linearVelocity.y * speed, moveX);
-        }
+    void Move()
+    {
+        float moveX = Input.GetAxisRaw("Horizontal");
+        rb.linearVelocity = new Vector2(speed * moveX, rb.linearVelocity.y);
+    }
 }

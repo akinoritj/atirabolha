@@ -1,14 +1,19 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
 public class GameOver : MonoBehaviour
 {
+    public bool estaVivo = true;
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Rasengan"))
         {
-            SceneManager.LoadScene("SampleScene");
+            estaVivo = false;
+            Time.timeScale = 0f;
         }
+    }
+        public bool verificaVidaPlayer()
+    {
+        return estaVivo;
     }
 }
